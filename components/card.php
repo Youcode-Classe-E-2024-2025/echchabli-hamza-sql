@@ -1,20 +1,28 @@
 <?php
-function getPackageCard($name, $description, $author, $versions) {
-    // Start the HTML for the card
+function getPackageCard($name, $description, $author, $versionsArray) {
+    
     $card = '<div class="package-card">
-                <h3>' . htmlspecialchars($name) . '</h3>
-                <p><strong>Description:</strong> ' . htmlspecialchars($description) . '</p>
-                <p><strong>Auteur:</strong> ' . htmlspecialchars($author) . '</p>
+                <h3>' . $name . '</h3>
+                <p><strong>Description:</strong> ' . $description. '</p>
+                <p><strong>Auteur:</strong> ' . $author. '</p>
                 <div class="versions">
                     <strong>Versions:</strong>';
-    
-    // Add each version to the card
-    foreach ($versions as $version) {
-        $card .= '<span class="version-item">' . htmlspecialchars($version) . '</span>';
-    }
+            // $versions = explode(',', $versionsArray);
+            
+           
+    // if (is_array($versions) && !empty($versions)) {
+    //     foreach ($versions as $version) {
+    //         echo "test " . $version ;
+    //         if ($version) {
+                $card .= '<span class="version-item">' .str_replace(",", " / ", $versionsArray)  . '</span>';
+    //         }
+    //     }
+    // } else {
+      
+    //     $card .= '<span class="version-item">No versions available</span>';
+    // }
 
-    // Close the HTML for the card
-    $card .= '</div>';
+    $card .= '</div> </div>';
 
     return $card;
 }

@@ -19,8 +19,8 @@
 
     </header>
 
-    <main class=" w-full h-full ">
-        <section class="w-full h-10 flex items-center mb-4">
+    <main class=" w-full h-fit ">
+        <section class="w-full h-10 flex items-center " id="search">
             <div class="relative w-2/6 mx-auto mt-6 flex">
                 <input type="text" placeholder="Search products"  class="w-full h-10 pl-4 pr-10 border border-[#EF8887] rounded-lg border-1" id="ProductInput"/>
                 <div class="absolute inset-y-0 right-2 flex items-center">
@@ -28,42 +28,3 @@
                 </div>
             </div>
         </section>
-
-        <section id="displayP" class="w-full">
-           
-              <div class="package-card">
-                <h3>Vue</h3>
-                <p><strong>Description:</strong> Framework progressif pour construire des interfaces utilisateur.</p>
-                <p><strong>Auteur:</strong> Evan You</p>
-                <div class="versions">
-                  <strong>Versions:</strong>
-                  <span class="version-item">2.6.14</span>
-                  <span class="version-item">3.2.45</span>
-                </div>
-              </div>
-             
-
-
-        </section>
-
-
-
-
-          
-
-
-
-
-    </main>
-
-    <footer class="bg-black w-full h-20 fixed bottom-0  flex justify-center items-center ">
-
-		
-                         <h6 class="text-white w-fit">YouCode © 2024</h6>
-
-		</footer>
-	
-	
-    
-</body>
-</html>
