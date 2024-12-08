@@ -1,21 +1,40 @@
-INSERT INTO Packages (Nom, Description) VALUES
-    ('express', 'Fast, unopinionated, minimalist web framework for Node.js.'),
-    ('react', 'A JavaScript library for building user interfaces.'),
-    ('vue', 'The Progressive JavaScript Framework.'),
-    ('angular', 'A platform for building mobile and desktop web applications.'),
-    ('lodash', 'A modern JavaScript utility library delivering modularity, performance, and extras.'),
-    ('axios', 'Promise-based HTTP client for the browser and Node.js.'),
-    ('moment', 'A lightweight JavaScript date library for parsing, validating, manipulating, and formatting dates.'),
-    ('jsonwebtoken', 'Implementation of JSON Web Tokens.'),
-    ('mongoose', 'MongoDB object modeling tool designed to work in an asynchronous environment.'),
-    ('typescript', 'JavaScript with syntax for types.'),
-    ('jest', 'Delightful JavaScript testing framework with a focus on simplicity.'),
-    ('webpack', 'A module bundler for modern JavaScript applications.'),
-    ('babel', 'A JavaScript compiler.'),
-    ('socket.io', 'Enables real-time, bidirectional, and event-based communication.'),
-    ('eslint', 'A tool for identifying and reporting on patterns in JavaScript.'),
-    ('chalk', 'Terminal string styling done right.'),
-    ('cors', 'Middleware for enabling Cross-Origin Resource Sharing.'),
-    ('body-parser', 'Node.js body parsing middleware.'),
-    ('npm', 'The package manager for JavaScript.'),
-    ('yarn', 'A fast, reliable, and secure dependency management tool.');
+CREATE TABLE auteurs (
+   
+    nom VARCHAR(255) PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    
+);
+
+CREATE TABLE packages (
+
+    nom VARCHAR(255) PRIMARY KEY,
+    description TEXT,
+    auteur_nom VARCHAR(255),
+    FOREIGN KEY (auteur_nom) REFERENCES auteurs(nom)
+);
+
+CREATE TABLE versions (
+    id INT AUTO_INCREMENT PRIMARY KEY ,
+    numero_version VARCHAR(50) NOT NULL,
+    date_publication DATE NOT NULL,
+    package_nom VARCHAR(255),
+    FOREIGN KEY (package_nom) REFERENCES packages(nom)
+);
+
+
+INSERT INTO auteurs (nom, email) VALUES 
+('Brendan Eich', 'brendan.eich@mozilla.com'),
+('Ryan Dahl', 'ryan.dahl@deno.land'),
+('Evan You', 'evan.you@vuejs.org'),
+('Rich Harris', 'rich.harris@svelte.dev'),
+('Jordan Walke', 'jordan.walke@react.dev');
+
+INSERT INTO packages (nom, description, auteur_nom) VALUES
+('Vue', 'Framework progressif pour construire des interfaces utilisateur.', 'Evan You'),
+('D3.js', 'Bibliothèque JavaScript pour produire des visualisations de données.', 'Ryan Dahl'),
+('Babel', 'Compilateur JavaScript moderne.', 'Brendan Eich'),
+('Preact', 'Bibliothèque JavaScript rapide avec une API similaire à React.', 'Jordan Walke'),
+('Chakra UI', 'Bibliothèque de composants React accessibles et modifiables.', 'Ryan Dahl'),
+('Jest', 'Framework de test JavaScript.', 'Ryan Dahl'),
+('Express', 'Framework minimaliste pour les applications Node.js.', 'Ryan Dahl'),
+

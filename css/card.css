@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+   
+  }
+  .package-card {
+    border: 2px solid #000000;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 60%;
+    margin: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .package-card h3 {
+      border: 1px solid #EF8887;
+      text-align: center;
+    margin: 0 0 10px;
+    color: #333;
+  }
+  .package-card p {
+    margin: 5px 0;
+  }
+  .versions {
+    margin-top: 10px;
+  }
+  .version-item {
+    background-color: #f9f9f9;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 0.9em;
+  }
