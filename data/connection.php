@@ -1,18 +1,17 @@
 <?php
 
-
 $host = 'localhost'; 
-     
 $dbname = 'jspackages';    
-$user = 'root';  
-$password = ''; 
+$user = 'postgres'; 
+$port = 5432; 
+$password = 'hamza'; 
 
 function getConnection() {
-    global $host, $dbname,  $user, $password;
+    global $host, $dbname, $port, $user, $password;
 
     try {
-        // MySQL DSN
-        $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
+        // PostgreSQL DSN
+        $dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
 
         // Create PDO instance
         $pdo = new PDO($dsn, $user, $password);
@@ -29,3 +28,4 @@ function getConnection() {
 }
 
 ?>
+

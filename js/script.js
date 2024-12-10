@@ -23,18 +23,19 @@ function filldisplayP(res) {
     let d=document.getElementById('displayP')
         d.innerHTML="";
         console.log('w1');
-         
+
+        console.log(res);
         res.forEach(element => {
-            console.log('w2');
+            console.log(element);
             let card = document.createElement('div');
             card.classList.add('package-card');
             card.innerHTML=`
                    
-                   <h3>${element.nom}</h3>
-                   <p><strong>Description:</strong> ${element.descriptionn}.</p>
-                   <p><strong>Auteur:</strong>${element.auteur}</p>
+                   <h3>${element.package_name}</h3>
+                   <p><strong>Description:</strong> ${element.package_description}.</p>
+                   <p><strong>Auteur:</strong>${element.authors.replace(/o/g, " / ")}</p>
                    <div class="versions">
-                       <strong>Versions:</strong><span class="version-item">${element.versio.replace(/o/g, " / ")}</span></div>
+                       <strong>Versions:</strong><span class="version-item">${element.versions.replace(/o/g, " / ")}</span></div>
                      
             `;
              d.appendChild(card);

@@ -1,0 +1,92 @@
+.data_form {
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+main{
+    min-height: 400px;
+    /* background-color: aquamarine; */
+}
+
+.crud{
+    width: 100%;
+   display: flex;
+   justify-content: space-around;
+}
+.buttonSize{
+    width: 20%;
+    background-color: #333;
+}
+.hidden{
+    display: none;
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+label {
+    font-size: 1em;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="date"], 
+input[type="number"], 
+select, 
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+button {
+    background-color: #EF8887;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #d56d6b;
+}
+
+/* Style for form error messages */
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: -10px;
+}
