@@ -138,7 +138,7 @@ INSERT INTO versions (numero_version, date_publication, package_nom) VALUES
                 $conn->exec($query);
             }
         }
-
+     $conn.close();
         
     } else {
         echo "Data already exists in 'auteurs'. Skipping SQL execution.";
