@@ -4,6 +4,9 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
     <link rel="stylesheet" href="../css/output.css">
     <link rel="stylesheet" href="../css/card.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -20,8 +23,7 @@
         <!-- Navigation -->
         <nav class="flex justify-evenly  text-white text-lg font-medium w-2/4">
             <a href="http://localhost/echchabli-hamza-sql/pages/add.php" class="hover:text-gray-200 mr-40 cursor-pointer">ADD</a>
-            <a href="http://localhost/echchabli-hamza-sql/pages/add.php" class="hover:text-gray-200">UPDATE</a>
-        </nav>
+              </nav>
     </header>
 
     <main class="w-full h-fit">

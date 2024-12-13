@@ -30,7 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         $stmt->execute();
 
-        echo "Author information inserted successfully.";
+        header("Location: http://localhost/echchabli-hamza-sql/pages/add.php?success=true");
+        exit;
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     }

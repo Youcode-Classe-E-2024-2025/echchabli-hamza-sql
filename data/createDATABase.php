@@ -1,5 +1,5 @@
 <?php
-include("connection.php");
+include_once("connection.php");
 
 $conn = getConnection();
 
@@ -8,7 +8,7 @@ try {
     $stmt = $conn->query("
     SELECT COUNT(*) AS table_count 
     FROM information_schema.tables 
-    WHERE table_schema = 'jspacks'
+    WHERE table_schema = 'yy'
 ");
 $count = $stmt->fetchColumn();
 
@@ -138,12 +138,12 @@ INSERT INTO versions (numero_version, date_publication, package_nom) VALUES
                 $conn->exec($query);
             }
         }
-     $conn.close();
+     
         
     } else {
         echo "Data already exists in 'auteurs'. Skipping SQL execution.";
     }
 } catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
+    // echo "Error: " . $e->getMessage();
 }
 ?>
