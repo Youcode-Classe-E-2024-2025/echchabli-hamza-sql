@@ -25,6 +25,14 @@ main{
 .hidden{
     display: none;
 }
+
+.one{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d56d6b;
+}
+
 h1 {
     text-align: center;
     color: #333;
@@ -84,9 +92,3 @@ button:hover {
     background-color: #d56d6b;
 }
 
-/* Style for form error messages */
-.error {
-    color: red;
-    font-size: 0.9em;
-    margin-top: -10px;
-}

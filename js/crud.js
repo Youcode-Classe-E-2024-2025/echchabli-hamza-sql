@@ -66,5 +66,41 @@
             sel.appendChild(op);
         });       
     }
+
+
+
+
+    var Pack = new XMLHttpRequest(); 
+
+    Pack.open("GET", "http://localhost/echchabli-hamza-sql/data/CRUD.php?action=getPackages", true);
+    //    console.log('pack');
+       
+    Pack.onload = function() {  
+        console.log(xhr.responseText);
+        if (xhr.status == 200) {
+            fillPackageSelect(JSON.parse(Pack.responseText)['data']); 
+          
+            
+        } else {
+            console.error('Error: ' + xhr.status);
+            console.log('w');
+        }
+    };
+
+    Pack.send(); 
+
+    function fillPackageSelect(arr) {
+
+
+
+        let p=document.getElementById('Package_drop_Down');
+
+        arr.forEach(element => {
+            let o=document.createElement('option');
+            o.textContent=element.nom;
+            p.appendChild(o);
+        });       
+    }
+    
     
     

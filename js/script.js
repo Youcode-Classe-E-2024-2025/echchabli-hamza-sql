@@ -8,6 +8,8 @@ document.getElementById("serachIcon").addEventListener("click", function() {
 
     xhr.onload = function() {
         if (xhr.status == 200) {
+            console.log(JSON.parse(xhr.responseText)['data']);
+            
             filldisplayP(JSON.parse(xhr.responseText)['data']); 
             console.log('w');
             
@@ -33,7 +35,7 @@ function filldisplayP(res) {
                    
                    <h3>${element.package_name}</h3>
                    <p><strong>Description:</strong> ${element.package_description}.</p>
-                   <p><strong>Auteur:</strong>${element.authors.replace(/o/g, " / ")}</p>
+                   <p><strong>Auteur:</strong>${element.authors.replace(/,/g, " / ")}</p>
                    <div class="versions">
                        <strong>Versions:</strong><span class="version-item">${element.versions.replace(/o/g, " / ")}</span></div>
                      

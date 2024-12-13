@@ -1,7 +1,7 @@
 <?php
 
 $host = 'localhost'; 
-$dbname = 'jspackages';    
+$dbname = 'jspacs';    
 $user = 'postgres'; 
 $port = 5432; 
 $password = 'hamza'; 

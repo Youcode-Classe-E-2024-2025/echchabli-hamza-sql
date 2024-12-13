@@ -1,7 +1,7 @@
 <?php
 
-include("connection.php");
 
+include("connection.php");
 
 
 
@@ -24,6 +24,8 @@ LEFT JOIN
     versions v ON p.nom = v.package_nom
 GROUP BY 
     p.nom, p.description;";
+
+    
 
     
 
@@ -68,7 +70,7 @@ function getByAuteurOrNom($input): array {
     try {
         $con = getConnection();
         
-        // Corrected SQL Query
+        
         $sql = "SELECT 
                     p.nom AS package_name, 
                     p.description AS package_description, 
@@ -85,22 +87,22 @@ function getByAuteurOrNom($input): array {
                 GROUP BY 
                     p.nom, p.description;";
 
-        // Prepare the SQL statement
+        
         $stmt = $con->prepare($sql);
 
-        // Bind the parameter
+       
         $stmt->bindParam(':input', $input, PDO::PARAM_STR);
 
-        // Execute the query
+       
         $stmt->execute();
 
-        // Fetch the results
+       
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         return $results;
 
     } catch (PDOException $e) {
-        // Handle and display errors
+       
         echo "Error: " . $e->getMessage();
         return [];
     }
@@ -108,7 +110,7 @@ function getByAuteurOrNom($input): array {
 
 
 
-if (isset($_GET['action']) && $_GET['action'] == 'getAuteur') {
+if (isset($_GET['action']) && $_GET['action'] === 'getAuteur') {
     
 
     try {
@@ -130,22 +132,73 @@ if (isset($_GET['action']) && $_GET['action'] == 'getAuteur') {
 
 function getAuteur(): array {
     try {
-        // Get the database connection
+        
         $con = getConnection();
         
-        // SQL query to fetch all author names
+       
         $sql = "SELECT nom FROM auteurs";
         
-        // Prepare and execute the query
+        
         $stmt = $con->query($sql);
         
-        // Fetch all results as an associative array
+      
         $authors = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
-        return $authors;  // Return the list of authors
+        return $authors;  
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
         return [];
+    }
+}
+
+
+
+
+
+
+if (isset($_GET['action']) && $_GET['action'] === 'getPackages') {
+    
+
+    try {
+       
+        $result = getPackages();
+
+       echo json_encode(['success' => true, 'data' => $result]);
+
+        header('Content-Type: application/json');
+        
+    } catch (Exception $e) {
+        
+        header('Content-Type: application/json', true, 500);
+
+        echo json_encode(['success' => false, 'message' => $e->getMessage()]);
+
+    }
+
+    exit; 
+
+}
+
+
+function getPackages(): array {
+    try {
+
+        $con = getConnection();
+        
+        
+        $sql = "SELECT nom FROM packages";
+        
+
+        $stmt = $con->query($sql);
+        
+
+        $packages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        
+        return $packages;  
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+        return ['none'];
     }
 }
 

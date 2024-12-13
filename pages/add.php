@@ -1,8 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/output.css">
+    <link rel="stylesheet" href="../css/card.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+
+</head>
+<body class="w-full h-full">
+<header class="w-full  one h-20  px-8">
+        <!-- Logo -->
+        <h1 class="text-4xl font-bold text-white w-1/4 ">
+            <a href="http://localhost/echchabli-hamza-sql/index.php">JS</a>
+        </h1>
+
+        <!-- Navigation -->
+        <nav class="flex justify-evenly  text-white text-lg font-medium w-2/4">
+            <a href="http://localhost/echchabli-hamza-sql/pages/add.php" class="hover:text-gray-200 mr-40 cursor-pointer">ADD</a>
+            <a href="http://localhost/echchabli-hamza-sql/pages/add.php" class="hover:text-gray-200">UPDATE</a>
+        </nav>
+    </header>
+
+    <main class="w-full h-fit">
+       
+    
+
+   
+
 <?php
-
-include("../components/header.php");
-
-
 include("../data/CRUD.php");
 
 
@@ -72,8 +100,8 @@ include("../data/CRUD.php");
         <label for="version_number">Version Number:</label>
         <input type="text" id="version_number" name="version_number" required><br><br>
 
-        <label for="package_nom">Package Name:</label>
-        <input type="text" id="package_nom" name="package_nom" required><br><br>
+           <label for="package_nom">Package Name:</label>
+           <select id="Package_drop_Down" name="pack_name" required></select>
 
 
         <label for="release_date">Release Date:</label>
